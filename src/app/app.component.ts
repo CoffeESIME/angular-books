@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { filter, tap, pluck, map } from 'rxjs';
+import { tap, map } from 'rxjs';
 import { Book } from './models/book.model';
 
 interface data {
@@ -14,8 +14,9 @@ interface data {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  http = inject(HttpClient);
-  title = 'bases';
+  public http: HttpClient = inject(HttpClient);
+  public title: string = 'bases';
+  public books: Book[] = [];
   ngOnInit() {
     console.log('here petition');
     this.http
@@ -25,6 +26,7 @@ export class AppComponent {
         map((data) => data?.books)
       )
       .subscribe((data) => {
+        this.books=data
         console.log(data);
       });
   }
