@@ -1,0 +1,41 @@
+.book-card {
+  text-align: center;
+  position: relative; /* For positioning the book image */
+}
+
+.book-image {
+  width: 40%; /* Make the image larger than its container */
+  position: absolute; /* Position it slightly outside the card */
+  top: 5%;
+  z-index: 10;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.book-info {
+  margin-top: 50%; /* Add space for the book image */
+}
+
+.book-title {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.book-author {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 1em;
+}
+
+.book-actions button {
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.book-actions button:hover {
+  background-color: #c03;
+}

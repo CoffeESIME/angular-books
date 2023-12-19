@@ -1,3 +1,11 @@
-<section class="">
-    <h1>Bookshelf</h1>
+<section class="w-100">
+  <h1 class="px-4 p-4">Bookshelf</h1>
+  <ng-container *ngIf="dataBooks">
+    <article class="p-4 container gap-3 col m-auto" style="display: flex">
+      <app-book-card
+        [book]="book"
+        *ngFor="let book of dataBooks | slice : 0 : 3"
+      ></app-book-card>
+    </article>
+  </ng-container>
 </section>

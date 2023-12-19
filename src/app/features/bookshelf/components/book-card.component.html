@@ -1,5 +1,37 @@
-<ng-container
-  ><h3>{{ book.title }}</h3>
-  <h4>{{ book.subtitle }}</h4>
-  <h5>{{ book.url }}</h5>
+<ng-container *ngIf="book">
+  <div class="book-card col rounded-4 p-3 bg-light  ">
+    <div class="book-image-container">
+      <img
+        src="{{ book.image }}"
+        alt="Blackout by Sezen Ahsikal"
+        class="book-image rounded"
+      />
+    </div>
+    <div class="book-info">
+      <h3 class="book-title">{{ book.title }}</h3>
+      <p class="book-author">{{ book.authors }}</p>
+      <div class="book-actions row">
+        <button
+          class="btn-view col-4 rounded-5 bg-danger"
+          *ngIf="book.users_choice"
+        >
+          <h6 class="m-0" style="font-size: xx-small">View</h6>
+        </button>
+        <button
+          class="btn-view col rounded-5 bg-danger col-6 m-auto"
+          *ngIf="!book.users_choice"
+        >
+          <h6 style="font-size: xx-small" class="m-0">View book</h6>
+        </button>
+        <button
+          class="btn-buy col rounded-5 bg-black font-size:xx-small"
+          *ngIf="book.users_choice"
+        >
+          <h6 style="font-size: xx-small" class="m-0">
+            Buy for {{ book.price.toFixed(2) }}
+          </h6>
+        </button>
+      </div>
+    </div>
+  </div>
 </ng-container>

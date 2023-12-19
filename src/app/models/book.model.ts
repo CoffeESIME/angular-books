@@ -5,4 +5,9 @@ export interface Book {
   subtitle: string;
   url: string;
   image: string;
+  genre: string;
+  date: string;
+  status: string;
+  price: number;
+  users_choice: boolean
 }
